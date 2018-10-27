@@ -1,7 +1,7 @@
 import random
 import string
 
-i1 = int(input('вывести целое лисло с:\n'))
+i1 = int(input('вывести целое число с:\n'))
 i2 = int(input('по\n'))
 
 print('случайное целое: ', random.randint(i1, i2))
