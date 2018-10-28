@@ -13,8 +13,8 @@ print('случайное вещественное: ', random.uniform(f1, f2))
 
 s1 = input('вывести символ с:\n').lower()
 s2 = input('по\n').lower()
-si1 = string.printable.find(s1)
-si2 = string.printable.find(s2)
-sr = string.printable[random.randint(si1, si2)]
+si1 = string.ascii_lowercase.find(s1)
+si2 = string.ascii_lowercase.find(s2)
+sr = string.ascii_lowercase[random.randint(si1, si2)]
 
 print('случайный символ: ', sr)
