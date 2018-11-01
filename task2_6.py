@@ -10,7 +10,7 @@ import random
 
 secret = random.randint(0, 100)
 steps = 10
-print(secret)
+# print(secret)
 for i in range(1, steps + 1):
     answer = int(input(f'попытка {i}: Угадайте число: '))
 

@@ -16,8 +16,10 @@ while True:
     if mode == '0':
         break
 
-    if mode in ['+', '-', '*', '/']:
+    if not mode in ['+', '-', '*', '/']:
+        print('неверная операция')
 
+    else:
         var1 = int(input('введите первый операнд (целое число): '))
         var2 = int(input('введите второй операнд (целое число): '))
 
@@ -32,5 +34,3 @@ while True:
                 print('делить на ноль нельзя')
             else:
                 print(f'частное = {var1 / var2}')
-    else:
-        print('неверная операция')
