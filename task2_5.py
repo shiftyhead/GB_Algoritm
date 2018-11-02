@@ -4,17 +4,17 @@
 Вывод выполнить в табличной форме: по десять пар «код-символ» в каждой строке.
 """
 
-begin = 32
-end = 127
-row_length = 10
+BEGIN = 32
+END = 127
+ROW_LENGTH = 10
 
-rows = (end - begin) / row_length
+rows = (END - BEGIN) / ROW_LENGTH
 
 for i in range(round(rows)):
     res = {}
-    for j in range(begin, begin + row_length):
-        if j > end:
+    for j in range(BEGIN, BEGIN + ROW_LENGTH):
+        if j > END:
             break
         res[j] = chr(j)
     print(res)
-    begin += row_length
+    BEGIN += ROW_LENGTH

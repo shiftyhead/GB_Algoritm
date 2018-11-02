@@ -6,10 +6,10 @@
 length = int(input("Введите целое число n: "))
 
 row = [1,]
-sum = row[0]
+_sum = row[0]
 
 for i in range(1, length):
     row.append(row[i - 1] / -2)
-    sum = sum + row[i]
+    _sum = _sum + row[i]
 
-print(f'Сумма {length} элементов ряда {row} \nравна {sum}')
+print(f'Сумма {length} элементов ряда {row} \nравна {_sum}')

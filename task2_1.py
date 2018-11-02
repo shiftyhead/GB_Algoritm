@@ -16,7 +16,7 @@ while True:
     if mode == '0':
         break
 
-    if not mode in ['+', '-', '*', '/']:
+    if mode not in ['+', '-', '*', '/']:
         print('неверная операция')
 
     else:
