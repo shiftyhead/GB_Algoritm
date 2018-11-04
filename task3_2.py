@@ -9,8 +9,8 @@
 import random
 
 SIZE = 10
-source = [random.randint(0, SIZE * SIZE) for _ in range(0, SIZE)]
+source = [random.randint(0, SIZE * SIZE) for _ in range(SIZE)]
 
 print(f'В массиве {source}')
-even = [id for id, val in enumerate(source) if not val % 2]
+even = [id for id, val in enumerate(source) if val % 2 == 0]
 print(f'четные числа имеют следующие индексы: {even}')

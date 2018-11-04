@@ -18,4 +18,4 @@ for i in range(4):
     row.append(sum_)
     res.append(row)
 
-print(*res, sep = '\n')
+print(*res, sep='\n')

@@ -8,6 +8,6 @@ print('В диапазоне 2-99')
 for i in range(2, 10):
     count = 0
     for j in range(2, 100):
-        if not j % i:
+        if j % i == 0:
             count += 1
     print(f'числу {i} кратно {count} чисел,')
