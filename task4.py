@@ -13,20 +13,29 @@ def era_(n):
                 j += i
 
     res = [i for i in sieve if i != 0]
+    print(len(res))
     return res
 
 def simple_numbers(n):
-    res = []
-    for i in range(2, n):
-        delimeters = range(2, i)
-        count = 0
-        for j in delimeters:
-            if i % j == 0:
-                count += 1
-        if count == 0:
-            res.append(i)
-    return res
+    res = [0, 2,]
+    counter_num = 1
 
+    while len(res) < n + 1:
+        for i in range(res[-1] + 1, res[-1] * 2):
+            count_del = 0
+            for j in range(2, i):
+                if i % j == 0:
+                    count_del += 1
+                    break
+            if count_del == 0:
+                res.append(i)
+            if n < len(res):
+                break
+        counter_num += 1
+
+    return res[n]
+print(era_(100))
+# print(simple_numbers(16))
 # cProfile.run('era_(1000)')
    # ncalls  tottime  percall  cumtime  percall filename:lineno(function)
    #      1    0.000    0.000    0.000    0.000 <string>:1(<module>)
