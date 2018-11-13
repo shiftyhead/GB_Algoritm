@@ -14,12 +14,9 @@ sum_all = Counter()
 
 for i in range(num_):
     title = input(f'Предприятие {i + 1}. Название: ')
-    sum_ = (
-            int(input('Прибыль за квартал 1: ')) +
-            int(input('Прибыль за квартал 2: ')) +
-            int(input('Прибыль за квартал 3: ')) +
-            int(input('Прибыль за квартал 4: '))
-            )
+    sum_ = 0
+    for j in range(1, 5):
+        sum_ += int(input(f'Прибыль за квартал {j}: '))
     avg_ = sum_ / 4
 
     items_[title] = Counter(
@@ -33,7 +30,7 @@ for i in range(num_):
 avg_all = sum_all['sum_'] / num_
 print(f'Средняя прибыль за год: {avg_all}')
 
-high = {j for j in items_ if items_[j]['sum_'] >= avg_all}
+high = {j for j in items_ if items_[j]['sum_'] > avg_all}
 low = set(items_.keys()) - set(high)
 print(f'Выше среднего: {high}')
 print(f'Ниже среднего: {low}')
