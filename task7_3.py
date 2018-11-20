@@ -14,7 +14,7 @@ print(f'дан массив: {array}')
 
 
 count = [[0, 0] for i in range(len(array))]
-
+max_ = 0
 for key_i, val_i in enumerate(array):
     for val_j in array:
         if val_j < val_i:
@@ -22,5 +22,14 @@ for key_i, val_i in enumerate(array):
         elif val_j > val_i:
             count[key_i][1] += 1
 
-res = [array[key] for key, val in enumerate(count) if abs(val[1] - val[0]) < 2]
-print(f'его медиана равна {res[0]}')
+    if val_i > max_:
+        max_ = val_i
+
+res = 0
+min_ = max_
+for key, val in enumerate(count):
+    med = abs(val[1] - val[0])
+    if med < min_:
+        min_ = med
+        res = array[key]
+print(f'его медиана равна {res}')
