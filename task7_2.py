@@ -3,6 +3,8 @@
 заданный случайными числами на промежутке [0; 50).
 Выведите на экран исходный и отсортированный массивы.
 """
+from collections import deque
+
 def union_sort(array):
     if len(array) < 3:
         if len(array) == 2:
@@ -13,19 +15,17 @@ def union_sort(array):
         ar1 = union_sort(array[:med])
         ar2 = union_sort(array[med:])
 
-        res = []
+        res = deque([], maxlen=len(ar1) + len(ar2))
         length = min(len(ar1), len(ar2))
 
         while length > 0:
-            if ar1[0] < ar2[0]:
-                res.append(ar1.pop(0))
+            if ar1[-1] > ar2[-1]:
+                res.appendleft(ar1.pop(-1))
             else:
-                res.append(ar2.pop(0))
-            length -= 1
+                res.appendleft(ar2.pop(-1))
+            length = min(len(ar1), len(ar2))
 
-        res += ar1 + ar2
-
-        return res
+        return ar1 + ar2 + list(res)
 
 import random
 
