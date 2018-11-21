@@ -6,13 +6,13 @@
 
 def subs_count(array):
 
-    count = []
+    count = set()
     lenght = len(array)
     for i in range(lenght):
         for j in range(i + 1, lenght + 1):
-            count.append(hash(array[i:j]))
+            count.add(hash(array[i:j]))
 
-    return len(set(count) - {hash(array)})
+    return len(count - {hash(array)})
 
 
 array = 'papa'
