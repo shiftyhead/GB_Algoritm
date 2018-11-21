@@ -6,9 +6,6 @@
 
 def bubble_sort(array):
 
-    if array == sorted(array, reverse=True):
-        return array
-
     n = len(array)
 
     while n > 0:
@@ -21,7 +18,7 @@ def bubble_sort(array):
 
 import random
 
-array = [random.randint(-100, 100) for _ in range(10)]
+array = [random.randint(-100, 99) for _ in range(10)]
 
 print(f'source: {array}')
 print(f'sorted: {bubble_sort(array[:])}')
